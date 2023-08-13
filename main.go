@@ -12,17 +12,6 @@ func main() {
 	loginController := &controllers.LoginController{}
 	userboardController := &controllers.UserboardController{}
 
-	r.LoadHTMLFiles(
-		"templates/view-login.html",
-		"templates/view-userboard.html",
-		"templates/login/login-form.html",
-		"templates/login/css-login.html",
-		"templates/login/js-login.html",
-		"templates/userboard/userboard.html",
-		"templates/userboard/css-userboard.html",
-		"templates/userboard/js-userboard.html",
-	)
-
 	// Middleware penanganan error global
 	r.Use(func(c *gin.Context) {
 		defer func() {
