@@ -1,0 +1,32 @@
+{{ define "body" }}
+    <div class="w-75">
+
+        <h1>Login</h1>
+        <form action="/login" method="post">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Login</div>
+                </div>
+                <div class="card-body">
+                    <div class="row form-group">
+                        <label class="label col-md-3" for="username">Username:</label>
+                        <div class="col-md-9">
+                            <input class="form-control" type="text" id="username" name="username" required><br>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="label col-md-3" for="password">Password:</label>
+                        <div class="col-md-9">
+                            <input class="form-control" type="password" id="password" name="password" required><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex flex-row justify-content-end">
+                        <button class="btn btn-primary" type="submit">Login</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+{{ end }}
