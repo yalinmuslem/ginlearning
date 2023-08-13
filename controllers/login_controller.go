@@ -15,6 +15,9 @@ func (ctrl *LoginController) ShowLoginForm(c *gin.Context) {
 	// 1. Load template
 	template, err := template.ParseFiles(
 		"templates/view-login.html",
+		"templates/login/header.html",
+		"templates/login/navbar.html",
+		"templates/login/menu.html",
 		"templates/login/css-login.html",
 		"templates/login/js-login.html",
 		"templates/login/login-form.html",

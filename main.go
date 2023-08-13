@@ -23,6 +23,8 @@ func main() {
 		c.Next()
 	})
 
+	r.Static("/assets", "assets")
+
 	r.GET("/", func(ctx *gin.Context) {
 		ctx.Redirect(302, "/login")
 	})
