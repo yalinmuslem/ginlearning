@@ -10,14 +10,12 @@ import (
 
 type LoginController struct{}
 
-// Di dalam file login_controller.go
 func (ctrl *LoginController) ShowLoginForm(c *gin.Context) {
-	// 1. Load template
 	template, err := template.ParseFiles(
 		"templates/view-login.html",
-		"templates/login/header.html",
-		"templates/login/navbar.html",
-		"templates/login/menu.html",
+		"templates/header.html",
+		"templates/navbar.html",
+		"templates/menu.html",
 		"templates/login/css-login.html",
 		"templates/login/js-login.html",
 		"templates/login/login-form.html",
@@ -27,9 +25,9 @@ func (ctrl *LoginController) ShowLoginForm(c *gin.Context) {
 		return
 	}
 
-	// 2. Render template
 	data := gin.H{
-		"title": "Login Page",
+		"title":      "Login Page",
+		"activeMenu": "login",
 	}
 	err = template.ExecuteTemplate(c.Writer, "view-login.html", data)
 	if err != nil {

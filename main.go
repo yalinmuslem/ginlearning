@@ -11,6 +11,7 @@ func main() {
 
 	loginController := &controllers.LoginController{}
 	userboardController := &controllers.UserboardController{}
+	exploreJobsController := &controllers.ExploreJobsController{}
 
 	// Middleware penanganan error global
 	r.Use(func(c *gin.Context) {
@@ -34,6 +35,8 @@ func main() {
 	r.POST("/login", loginController.HandleLogin)
 
 	r.GET("/userboard", userboardController.Index)
+
+	r.GET("/explore-jobs", exploreJobsController.Index)
 
 	r.Run() // Menjalankan server pada port default (8080)
 }
